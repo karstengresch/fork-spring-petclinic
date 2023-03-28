@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
@@ -31,6 +33,10 @@
 
   <dependencies>
     <!-- Spring and Spring Boot dependencies -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
@@ -65,6 +71,11 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>mssql-jdbc</artifactId>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -150,12 +161,16 @@
             <id>nohttp-checkstyle-validation</id>
             <phase>validate</phase>
             <configuration>
-              <configLocation>src/checkstyle/nohttp-checkstyle.xml</configLocation>
-              <suppressionsLocation>src/checkstyle/nohttp-checkstyle-suppressions.xml</suppressionsLocation>
+              <configLocation>
+                src/checkstyle/nohttp-checkstyle.xml</configLocation>
+              <suppressionsLocation>
+                src/checkstyle/nohttp-checkstyle-suppressions.xml</suppressionsLocation>
               <encoding>UTF-8</encoding>
-              <sourceDirectories>${basedir}</sourceDirectories>
+              <sourceDirectories>
+                ${basedir}</sourceDirectories>
               <includes>**/*</includes>
-              <excludes>**/.git/**/*,**/.idea/**/*,**/target/**/,**/.flattened-pom.xml,**/*.class</excludes>
+              <excludes>
+                **/.git/**/*,**/.idea/**/*,**/target/**/,**/.flattened-pom.xml,**/*.class</excludes>
             </configuration>
             <goals>
               <goal>check</goal>
@@ -179,10 +194,13 @@
             </goals>
             <configuration>
               <additionalProperties>
-                <encoding.source>${project.build.sourceEncoding}</encoding.source>
-                <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                <encoding.source>
+                  ${project.build.sourceEncoding}</encoding.source>
+                <encoding.reporting>
+                  ${project.reporting.outputEncoding}</encoding.reporting>
                 <java.source>${maven.compiler.source}</java.source>
-                <java.target>${maven.compiler.target}</java.target>
+                <java.target>
+                  ${maven.compiler.target}</java.target>
               </additionalProperties>
             </configuration>
           </execution>
@@ -214,7 +232,8 @@
         <groupId>io.github.git-commit-id</groupId>
         <artifactId>git-commit-id-maven-plugin</artifactId>
         <configuration>
-          <failOnNoGitDirectory>false</failOnNoGitDirectory>
+          <failOnNoGitDirectory>
+            false</failOnNoGitDirectory>
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
         </configuration>
       </plugin>
@@ -286,12 +305,14 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.webjars.npm</groupId>
+                      <groupId>
+                        org.webjars.npm</groupId>
                       <artifactId>bootstrap</artifactId>
                       <version>${webjars-bootstrap.version}</version>
                     </artifactItem>
                   </artifactItems>
-                  <outputDirectory>${project.build.directory}/webjars</outputDirectory>
+                  <outputDirectory>
+                    ${project.build.directory}/webjars</outputDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -311,9 +332,12 @@
               </execution>
             </executions>
             <configuration>
-              <inputPath>${basedir}/src/main/scss/</inputPath>
-              <outputPath>${basedir}/src/main/resources/static/resources/css/</outputPath>
-              <includePath>${project.build.directory}/webjars/META-INF/resources/webjars/bootstrap/${webjars-bootstrap.version}/scss/</includePath>
+              <inputPath>
+                ${basedir}/src/main/scss/</inputPath>
+              <outputPath>
+                ${basedir}/src/main/resources/static/resources/css/</outputPath>
+              <includePath>
+                ${project.build.directory}/webjars/META-INF/resources/webjars/bootstrap/${webjars-bootstrap.version}/scss/</includePath>
             </configuration>
           </plugin>
         </plugins>
@@ -340,11 +364,13 @@
                   <pluginExecutions>
                     <pluginExecution>
                       <pluginExecutionFilter>
-                        <groupId>org.apache.maven.plugins</groupId>
+                        <groupId>
+                          org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
                         <versionRange>[1,)</versionRange>
                         <goals>
-                          <goal>check</goal>
+                          <goal>
+                            check</goal>
                         </goals>
                       </pluginExecutionFilter>
                       <action>
@@ -353,9 +379,11 @@
                     </pluginExecution>
                     <pluginExecution>
                       <pluginExecutionFilter>
-                        <groupId>org.springframework.boot</groupId>
+                        <groupId>
+                          org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
-                        <versionRange>[1,)</versionRange>
+                        <versionRange>
+                          [1,)</versionRange>
                         <goals>
                           <goal>build-info</goal>
                         </goals>
@@ -366,9 +394,11 @@
                     </pluginExecution>
                     <pluginExecution>
                       <pluginExecutionFilter>
-                        <groupId>io.spring.javaformat</groupId>
+                        <groupId>
+                          io.spring.javaformat</groupId>
                         <artifactId>spring-javaformat-maven-plugin</artifactId>
-                        <versionRange>[0,)</versionRange>
+                        <versionRange>
+                          [0,)</versionRange>
                         <goals>
                           <goal>validate</goal>
                         </goals>
