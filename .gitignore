@@ -15,4 +15,3 @@ build/*
 _site/
 *.css
 !petclinic.css
-.blah
