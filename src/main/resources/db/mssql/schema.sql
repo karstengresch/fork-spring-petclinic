@@ -24,7 +24,7 @@ end
   DROP TABLE IF EXISTS specialties;
   DROP TABLE IF EXISTS vet_specialties;
   DROP TABLE IF EXISTS types;
-  DROP TABLE IF EXISTS owners;
+  DROP TABLE IF EXISTS holders;
   DROP TABLE IF EXISTS pets;
   DROP TABLE IF EXISTS visits;
 
@@ -58,7 +58,7 @@ end
   );
   CREATE INDEX types_name ON types(name);
 
-  CREATE TABLE owners (
+  CREATE TABLE holders (
     id INTEGER NOT NULL IDENTITY PRIMARY KEY,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
@@ -66,16 +66,16 @@ end
     city VARCHAR(80),
     telephone VARCHAR(20)
   );
-  CREATE INDEX owners_last_name ON owners(last_name);
+  CREATE INDEX holders_last_name ON holders(last_name);
 
   CREATE TABLE pets (
     id INTEGER NOT NULL IDENTITY PRIMARY KEY,
     name VARCHAR(30),
     birth_date DATE,
     type_id INTEGER NOT NULL,
-    owner_id INTEGER NOT NULL
+    holder_id INTEGER NOT NULL
   );
-  alter table pets add constraint fk_pets_owners foreign key (owner_id) references owners(id);
+  alter table pets add constraint fk_pets_holders foreign key (holder_id) references holders(id);
   alter table pets add constraint fk_pets_types foreign key (type_id) references types(id);
   CREATE INDEX pets_name ON pets(name);
 

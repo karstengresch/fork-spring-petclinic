@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.holder;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Repository class for <code>Owner</code> domain objects All method names are compliant
+ * Repository class for <code>Holder</code> domain objects All method names are compliant
  * with Spring Data naming conventions so this interface can easily be extended for Spring
  * Data. See:
  * https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
@@ -35,7 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Sam Brannen
  * @author Michael Isvy
  */
-public interface OwnerRepository extends Repository<Owner, Integer> {
+public interface HolderRepository extends Repository<Holder, Integer> {
 
 	/**
 	 * Retrieve all {@link PetType}s from the data store.
@@ -46,37 +46,37 @@ public interface OwnerRepository extends Repository<Owner, Integer> {
 	List<PetType> findPetTypes();
 
 	/**
-	 * Retrieve {@link Owner}s from the data store by last name, returning all owners
+	 * Retrieve {@link Holder}s from the data store by last name, returning all holders
 	 * whose last name <i>starts</i> with the given name.
 	 * @param lastName Value to search for
-	 * @return a Collection of matching {@link Owner}s (or an empty Collection if none
+	 * @return a Collection of matching {@link Holder}s (or an empty Collection if none
 	 * found)
 	 */
 
-	@Query("SELECT DISTINCT owner FROM Owner owner left join  owner.pets WHERE owner.lastName LIKE :lastName% ")
+	@Query("SELECT DISTINCT holder FROM Holder holder left join  holder.pets WHERE holder.lastName LIKE :lastName% ")
 	@Transactional(readOnly = true)
-	Page<Owner> findByLastName(@Param("lastName") String lastName, Pageable pageable);
+	Page<Holder> findByLastName(@Param("lastName") String lastName, Pageable pageable);
 
 	/**
-	 * Retrieve an {@link Owner} from the data store by id.
+	 * Retrieve an {@link Holder} from the data store by id.
 	 * @param id the id to search for
-	 * @return the {@link Owner} if found
+	 * @return the {@link Holder} if found
 	 */
-	@Query("SELECT owner FROM Owner owner left join fetch owner.pets WHERE owner.id =:id")
+	@Query("SELECT holder FROM Holder holder left join fetch holder.pets WHERE holder.id =:id")
 	@Transactional(readOnly = true)
-	Owner findById(@Param("id") Integer id);
+	Holder findById(@Param("id") Integer id);
 
 	/**
-	 * Save an {@link Owner} to the data store, either inserting or updating it.
-	 * @param owner the {@link Owner} to save
+	 * Save an {@link Holder} to the data store, either inserting or updating it.
+	 * @param holder the {@link Holder} to save
 	 */
-	void save(Owner owner);
+	void save(Holder holder);
 
 	/**
-	 * Returnes all the owners from data store
+	 * Returnes all the holders from data store
 	 **/
-	@Query("SELECT owner FROM Owner owner")
+	@Query("SELECT holder FROM Holder holder")
 	@Transactional(readOnly = true)
-	Page<Owner> findAll(Pageable pageable);
+	Page<Holder> findAll(Pageable pageable);
 
 }

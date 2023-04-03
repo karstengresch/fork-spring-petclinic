@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.holder;
 
 import java.util.Map;
 
@@ -38,10 +38,10 @@ import jakarta.validation.Valid;
 @Controller
 class VisitController {
 
-	private final OwnerRepository owners;
+	private final HolderRepository holders;
 
-	public VisitController(OwnerRepository owners) {
-		this.owners = owners;
+	public VisitController(HolderRepository holders) {
+		this.holders = holders;
 	}
 
 	@InitBinder
@@ -57,13 +57,13 @@ class VisitController {
 	 * @return Pet
 	 */
 	@ModelAttribute("visit")
-	public Visit loadPetWithVisit(@PathVariable("ownerId") int ownerId, @PathVariable("petId") int petId,
+	public Visit loadPetWithVisit(@PathVariable("holderId") int holderId, @PathVariable("petId") int petId,
 			Map<String, Object> model) {
-		Owner owner = this.owners.findById(ownerId);
+		Holder holder = this.holders.findById(holderId);
 
-		Pet pet = owner.getPet(petId);
+		Pet pet = holder.getPet(petId);
 		model.put("pet", pet);
-		model.put("owner", owner);
+		model.put("holder", holder);
 
 		Visit visit = new Visit();
 		pet.addVisit(visit);
@@ -72,23 +72,23 @@ class VisitController {
 
 	// Spring MVC calls method loadPetWithVisit(...) before initNewVisitForm is
 	// called
-	@GetMapping("/owners/{ownerId}/pets/{petId}/visits/new")
+	@GetMapping("/holders/{holderId}/pets/{petId}/visits/new")
 	public String initNewVisitForm() {
 		return "pets/createOrUpdateVisitForm";
 	}
 
 	// Spring MVC calls method loadPetWithVisit(...) before processNewVisitForm is
 	// called
-	@PostMapping("/owners/{ownerId}/pets/{petId}/visits/new")
-	public String processNewVisitForm(@ModelAttribute Owner owner, @PathVariable int petId, @Valid Visit visit,
+	@PostMapping("/holders/{holderId}/pets/{petId}/visits/new")
+	public String processNewVisitForm(@ModelAttribute Holder holder, @PathVariable int petId, @Valid Visit visit,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return "pets/createOrUpdateVisitForm";
 		}
 
-		owner.addVisit(petId, visit);
-		this.owners.save(owner);
-		return "redirect:/owners/{ownerId}";
+		holder.addVisit(petId, visit);
+		this.holders.save(holder);
+		return "redirect:/holders/{holderId}";
 	}
 
 }

@@ -5,7 +5,9 @@
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
-      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments"
+        guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+        enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="PETCLINIC_HOST" elementType="Argument">
             <stringProp name="Argument.name">PETCLINIC_HOST</stringProp>
@@ -27,9 +29,12 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="User threads" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="User threads"
+        enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Contr�leur Boucle" enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController"
+          guiclass="LoopControlPanel" testclass="LoopController" testname="Contr�leur Boucle"
+          enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
@@ -44,13 +49,17 @@
         <stringProp name="TestPlan.comments">Original : 500 - 10 - 10</stringProp>
       </ThreadGroup>
       <hashTree>
-        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Fixed time counter" enabled="true">
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer"
+          testname="Fixed time counter" enabled="true">
           <stringProp name="ConstantTimer.delay">300</stringProp>
         </ConstantTimer>
-        <hashTree/>
-        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Default HTTP parameters" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement"
+          testname="Default HTTP parameters" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain">${PETCLINIC_HOST}</stringProp>
           <stringProp name="HTTPSampler.port">${PETCLINIC_PORT}</stringProp>
@@ -61,13 +70,15 @@
           <stringProp name="HTTPSampler.path"></stringProp>
           <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
         </ConfigTestElement>
-        <hashTree/>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP cookie manager" enabled="true">
-          <collectionProp name="CookieManager.cookies"/>
+        <hashTree />
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager"
+          testname="HTTP cookie manager" enabled="true">
+          <collectionProp name="CookieManager.cookies" />
           <boolProp name="CookieManager.clearEachIteration">true</boolProp>
         </CookieManager>
-        <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="User Count" enabled="true">
+        <hashTree />
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="User Count"
+          enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end">10</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -75,8 +86,9 @@
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
-        <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Pet Count" enabled="true">
+        <hashTree />
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Pet Count"
+          enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end">13</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -84,10 +96,13 @@
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Home page" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="Home page" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -104,10 +119,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSS" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSS"
+          enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -124,10 +142,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="JS" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="JS"
+          enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -144,10 +165,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Vets" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Vets"
+          enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -164,10 +188,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Find owner" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="Find holder" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -175,7 +202,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/find</stringProp>
+          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/holders/find</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -184,10 +211,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Find owner with lastname=&quot;&quot;" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="Find holder with lastname=&quot;&quot;" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -195,7 +225,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners?lastName=</stringProp>
+          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/holders?lastName=</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -204,10 +234,14 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Owner" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="Holder"
+          enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -215,7 +249,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/${count}</stringProp>
+          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/holders/${count}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -224,10 +258,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Edit Owner" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="Edit Holder" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -235,7 +272,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/${count}/edit</stringProp>
+          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/holders/${count}/edit</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -244,14 +281,16 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Edit Owner" enabled="true">
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="POST Edit Holder" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">firstName=Test&amp;lastName=${count}&amp;address=1234+Test+St.&amp;city=TestCity&amp;telephone=612345678</stringProp>
+                <stringProp name="Argument.value">
+                  firstName=Test&amp;lastName=${count}&amp;address=1234+Test+St.&amp;city=TestCity&amp;telephone=612345678</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -262,7 +301,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/${count}/edit</stringProp>
+          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/holders/${count}/edit</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -271,10 +310,13 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="New visit" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="New visit" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -282,7 +324,8 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/${count}/pets/${petCount}/visits/new</stringProp>
+          <stringProp name="HTTPSampler.path">
+            ${CONTEXT_WEB}/holders/${count}/pets/${petCount}/visits/new</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -291,8 +334,9 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST new visit" enabled="true">
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="POST new visit" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -309,7 +353,8 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/${count}/pets/${petCount}/visits/new</stringProp>
+          <stringProp name="HTTPSampler.path">
+            ${CONTEXT_WEB}/holders/${count}/pets/${petCount}/visits/new</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -318,10 +363,14 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Owner" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
+        <hashTree />
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy"
+          testname="Holder"
+          enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments"
+            guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables pr�-d�finies"
+            enabled="true">
+            <collectionProp name="Arguments.arguments" />
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
@@ -329,7 +378,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/owners/${count}</stringProp>
+          <stringProp name="HTTPSampler.path">${CONTEXT_WEB}/holders/${count}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -338,8 +387,9 @@
           <boolProp name="HTTPSampler.monitor">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Results" enabled="false">
+        <hashTree />
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector"
+          testname="Results" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -371,8 +421,9 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregated report" enabled="true">
+        <hashTree />
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector"
+          testname="Aggregated report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -404,7 +455,7 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
+        <hashTree />
       </hashTree>
     </hashTree>
   </hashTree>
