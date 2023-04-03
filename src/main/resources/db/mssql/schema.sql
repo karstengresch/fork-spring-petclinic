@@ -20,13 +20,13 @@ exec (@sql)
 PRINT @sql
 end
 
-  DROP TABLE IF EXISTS vets;
+  /* DROP TABLE IF EXISTS vets;
   DROP TABLE IF EXISTS specialties;
   DROP TABLE IF EXISTS vet_specialties;
   DROP TABLE IF EXISTS types;
   DROP TABLE IF EXISTS holders;
   DROP TABLE IF EXISTS pets;
-  DROP TABLE IF EXISTS visits;
+  DROP TABLE IF EXISTS visits; */
 
   CREATE TABLE vets (
     id INTEGER NOT NULL IDENTITY PRIMARY KEY,
