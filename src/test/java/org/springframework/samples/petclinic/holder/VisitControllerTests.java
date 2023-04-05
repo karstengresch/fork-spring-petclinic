@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.holder;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -38,7 +38,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @WebMvcTest(VisitController.class)
 class VisitControllerTests {
 
-	private static final int TEST_OWNER_ID = 1;
+	private static final int TEST_HOLDER_ID = 1;
 
 	private static final int TEST_PET_ID = 1;
 
@@ -46,20 +46,20 @@ class VisitControllerTests {
 	private MockMvc mockMvc;
 
 	@MockBean
-	private OwnerRepository owners;
+	private HolderRepository holders;
 
 	@BeforeEach
 	void init() {
-		Owner owner = new Owner();
+		Holder holder = new Holder();
 		Pet pet = new Pet();
-		owner.addPet(pet);
+		holder.addPet(pet);
 		pet.setId(TEST_PET_ID);
-		given(this.owners.findById(TEST_OWNER_ID)).willReturn(owner);
+		given(this.holders.findById(TEST_HOLDER_ID)).willReturn(holder);
 	}
 
 	@Test
 	void testInitNewVisitForm() throws Exception {
-		mockMvc.perform(get("/owners/{ownerId}/pets/{petId}/visits/new", TEST_OWNER_ID, TEST_PET_ID))
+		mockMvc.perform(get("/holders/{holderId}/pets/{petId}/visits/new", TEST_HOLDER_ID, TEST_PET_ID))
 			.andExpect(status().isOk())
 			.andExpect(view().name("pets/createOrUpdateVisitForm"));
 	}
@@ -67,17 +67,17 @@ class VisitControllerTests {
 	@Test
 	void testProcessNewVisitFormSuccess() throws Exception {
 		mockMvc
-			.perform(post("/owners/{ownerId}/pets/{petId}/visits/new", TEST_OWNER_ID, TEST_PET_ID)
+			.perform(post("/holders/{holderId}/pets/{petId}/visits/new", TEST_HOLDER_ID, TEST_PET_ID)
 				.param("name", "George")
 				.param("description", "Visit Description"))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(view().name("redirect:/owners/{ownerId}"));
+			.andExpect(view().name("redirect:/holders/{holderId}"));
 	}
 
 	@Test
 	void testProcessNewVisitFormHasErrors() throws Exception {
 		mockMvc
-			.perform(post("/owners/{ownerId}/pets/{petId}/visits/new", TEST_OWNER_ID, TEST_PET_ID).param("name",
+			.perform(post("/holders/{holderId}/pets/{petId}/visits/new", TEST_HOLDER_ID, TEST_PET_ID).param("name",
 					"George"))
 			.andExpect(model().attributeHasErrors("visit"))
 			.andExpect(status().isOk())

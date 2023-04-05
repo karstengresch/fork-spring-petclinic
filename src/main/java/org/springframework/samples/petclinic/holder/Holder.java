@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.holder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotEmpty;
 
 /**
- * Simple JavaBean domain object representing an owner.
+ * Simple JavaBean domain object representing an holder.
  *
  * @author Ken Krebs
  * @author Juergen Hoeller
@@ -43,8 +43,8 @@ import jakarta.validation.constraints.NotEmpty;
  * @author Oliver Drotbohm
  */
 @Entity
-@Table(name = "owners")
-public class Owner extends Person {
+@Table(name = "holders")
+public class Holder extends Person {
 
 	@Column(name = "address")
 	@NotEmpty
@@ -60,7 +60,7 @@ public class Owner extends Person {
 	private String telephone;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "owner_id")
+	@JoinColumn(name = "holder_id")
 	@OrderBy("name")
 	private List<Pet> pets = new ArrayList<>();
 
@@ -99,7 +99,7 @@ public class Owner extends Person {
 	}
 
 	/**
-	 * Return the Pet with the given name, or null if none found for this Owner.
+	 * Return the Pet with the given name, or null if none found for this Holder.
 	 * @param name to test
 	 * @return a pet if pet name is already in use
 	 */
@@ -108,7 +108,7 @@ public class Owner extends Person {
 	}
 
 	/**
-	 * Return the Pet with the given id, or null if none found for this Owner.
+	 * Return the Pet with the given id, or null if none found for this Holder.
 	 * @param name to test
 	 * @return a pet if pet id is already in use
 	 */
@@ -125,7 +125,7 @@ public class Owner extends Person {
 	}
 
 	/**
-	 * Return the Pet with the given name, or null if none found for this Owner.
+	 * Return the Pet with the given name, or null if none found for this Holder.
 	 * @param name to test
 	 * @return a pet if pet name is already in use
 	 */
@@ -160,7 +160,7 @@ public class Owner extends Person {
 	 * @param petId the identifier of the {@link Pet}, must not be {@literal null}.
 	 * @param visit the visit to add, must not be {@literal null}.
 	 */
-	public Owner addVisit(Integer petId, Visit visit) {
+	public Holder addVisit(Integer petId, Visit visit) {
 
 		Assert.notNull(petId, "Pet identifier must not be null!");
 		Assert.notNull(visit, "Visit must not be null!");
